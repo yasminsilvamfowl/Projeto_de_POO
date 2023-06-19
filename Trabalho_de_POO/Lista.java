@@ -1,21 +1,19 @@
 import java.util.Vector;
 import java.util.Collections;
 
-public class Curso {
+public class Lista {
   
-  private Vector<Estudante> lista;
-  private String nomeDoCurso;
+  private Vector<Estudante> lista;  
   private int vagas;
-
-  public Curso(String nomeDoCurso, int vagas){
+  
+  public Lista (int vagas){
     lista = new Vector<Estudante>();
-    this.nomeDoCurso = nomeDoCurso;
     this.vagas = vagas;
   }
-
-  // Adiciona e ordena o vetor de estudantes em ordem decrescente da nota
+  
+  // Adiciona e ordena a lista de estudantes em ordem decrescente da nota
   public void adicionar(Estudante est) {
-      //aluno já adicionado
+      //execessão de aluno já adicionado
       if(existe(est.getNome())) 
         return;
       lista.add(est);
@@ -23,7 +21,6 @@ public class Curso {
   }
 
   //Retorna estudante caso estja no vetor, retorna null caso contrário
-  //Parâmetro: nome do aluno
   private Estudante procurar(String nomeEstudante) {
     for (int i = 0; i < lista.size(); i++) {
       if (lista.get(i).getNome() == nomeEstudante) {
@@ -46,12 +43,20 @@ public class Curso {
       lista.remove(est);
   }
 
+  //retorna o primeiro colocado da lista
+  public Estudante primeiroColocado() {
+      if (lista.isEmpty()) {
+        return null;
+      }
+      return lista.get(0);
+  }
+
   // Imprimir os objetos do vetor
   public void imprimirLista(){
     
     //Caso a lista esteja vazia
     if (lista.isEmpty()) {
-      System.out.println("Lista vazia");
+      System.out.println("lista vazia");
       return;
     }
 
