@@ -13,18 +13,18 @@ public class Estudante {
 		this.nota = nota;
 	}
 	
+	public int compararEstudante (Estudante outroEstudante) {
+		return Float.compare(outroEstudante.getNota(), this.nota);
+		//0: if f1 is numerically equal to f2.
+		//Negative value: if f1 is numerically less than f2.
+		//Positive value: if f1 is numerically greater than f2.
+	}
+	
 	public String getNome() {
 		return this.nome;
 	}
 	
 	public float getNota() {
 		return this.nota;
-	}
-	
-	public int compararEstudante (Estudante outroEstudante) {
-		return Float.compare(outroEstudante.getNota(), this.nota);
-		//0: if f1 is numerically equal to f2.
-		//Negative value: if f1 is numerically less than f2.
-		//Positive value: if f1 is numerically greater than f2.
 	}
 }
