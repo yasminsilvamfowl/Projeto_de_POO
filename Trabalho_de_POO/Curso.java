@@ -19,7 +19,7 @@ public class Curso {
       if(existe(est.getNome())) 
         return;
       lista.add(est);
-      Collections.sort(lista);
+      Collections.sort(lista, new CompararNotaEstudante());
   }
 
   //Retorna estudante caso estja no vetor, retorna null caso contrário
