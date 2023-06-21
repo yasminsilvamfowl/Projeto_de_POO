@@ -1,4 +1,8 @@
+package classe_curso;
+
+
 import java.util.Comparator;
+import classe_estudante.*;
 
 class CompararNotaEstudante implements Comparator<Estudante> {
     //@Override caso Java na versão mais recente

@@ -1,14 +1,17 @@
+package classe_curso;
+
 import java.util.Vector;
 import java.util.Collections;
+import classe_estudante.*;
 
-public class Lista {
+public class Lista{
   
   private Vector<Estudante> lista;  
   private int vagas;
   
   public Lista (int vagas){
     lista = new Vector<Estudante>();
-    this.vagas = vagas;
+    this.setVagas(vagas);
   }
   
   // Adiciona e ordena a lista de estudantes em ordem decrescente da nota
@@ -17,6 +20,7 @@ public class Lista {
       if(existe(est.getNome())) 
         return;
       lista.add(est);
+ 
       Collections.sort(lista, new CompararNotaEstudante());
   }
 
@@ -65,5 +69,13 @@ public class Lista {
         System.out.println(estudante.getNome() + ": " + estudante.getNota());
     }
   }
+
+public int getVagas() {
+	return vagas;
+}
+
+public void setVagas(int vagas) {
+	this.vagas = vagas;
+}
   
 }

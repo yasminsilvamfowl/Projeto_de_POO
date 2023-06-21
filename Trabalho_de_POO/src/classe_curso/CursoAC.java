@@ -1,3 +1,7 @@
+package classe_curso;
+
+import classe_estudante.*;
+
 public class CursoAC {
 
   private String nomeDoCurso;

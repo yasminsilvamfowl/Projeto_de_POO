@@ -1,3 +1,7 @@
+package classe_curso;
+
+import classe_estudante.*;
+
 public class CursoCota1Cota2 extends CursoCota1 {
 
   private Lista listaC2;
