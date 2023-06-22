@@ -2,6 +2,7 @@ package classe_modalidade;
 
 import java.util.Vector;
 import classe_estudante.*;
+import classe_modalidade_excecoes.*;
 
 public class AmplaConcorrencia{
     private Vector<Estudante> estudantes = new Vector<Estudante>();
@@ -9,6 +10,40 @@ public class AmplaConcorrencia{
     
 	public AmplaConcorrencia(int vagas){
 		setVagas(vagas);
+	}
+	
+	
+	public void ClassificaEstudante() {
+		for(int i = 0; estudantes.size() > i; i++) {
+			if(!verificaPPI(estudantes.get(i))) {
+				Final(i);
+			}
+			else if(!verificaPcD(estudantes.get(i))){
+				Final(i);
+			}else if(!verificaRenda(estudantes.get(i))) {
+				Final(i);
+			}else if(!verificaEscolaPublica(estudantes.get(i))) {
+				Final(i);
+			}
+					
+		}
+	}
+	
+	public void Final(int i) {
+		Estudante e = estudantes.remove(i);
+		estudantes.add(e);
+		
+	}
+	
+	public void Colocacao() {
+		for(int i = 0; estudantes.size() > i; i++) {
+			if(estudantes.get(i).getExc() != null) {
+				
+			}
+			else if(i > vagas) {
+				VIException vie = new VIException(estudantes.get(i));
+			}
+		}
 	}
 	
 	public void adicionaEstudante(Estudante e) {
@@ -48,19 +83,19 @@ public class AmplaConcorrencia{
 	      return estudantes.get(0);
 	  }
 	
-	public Boolean verificaRenda(){
+	public Boolean verificaRenda(Estudante e){
 	    return true;
 	}
 	
-	public  Boolean verificaEscolaPublica(){
+	public  Boolean verificaEscolaPublica(Estudante e){
 	    return true;
 	}
 	
-	public Boolean verificaPPI(){
+	public Boolean verificaPPI(Estudante e){
 	    return true;
 	}
 	
-	public Boolean verificaPcD(){
+	public Boolean verificaPcD(Estudante e){
 	    return true;
 	}
 	
