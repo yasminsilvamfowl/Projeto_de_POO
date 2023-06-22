@@ -2,8 +2,8 @@ package classe_modalidade;
 
 public class PPIEP extends EscolaPublica{
 
-	public PPIEP() {
-		
+	public PPIEP(int vagas) {
+		super(vagas);
 	}
 
 

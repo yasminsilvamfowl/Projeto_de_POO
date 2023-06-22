@@ -10,8 +10,8 @@ public class MAIN {
 		Estudante eS2 = new Estudante("pedro", 300);
 		Estudante eS3 = new Estudante("ryan", 800);
 		
-		AmplaConcorrencia ac = new AmplaConcorrencia();
-		EscolaPublica es = new EscolaPublica();
+		AmplaConcorrencia ac = new AmplaConcorrencia(2);
+		EscolaPublica es = new EscolaPublica(2);
 		ac.adicionaEstudante(eS);
 		ac.adicionaEstudante(eS1);
 		es.adicionaEstudante(eS2);

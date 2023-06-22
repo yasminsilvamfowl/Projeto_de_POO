@@ -1,3 +1,8 @@
+package classe_curso;
+
+import classe_modalidade.*;
+import classe_estudante.*;
+
 public class Curso {
 
   private String nomeDoCurso;
@@ -26,11 +31,11 @@ public class Curso {
     this.vagasRF = vagasPcDRF;
     this.vagasAC = vagasRF;
     listaAC = new AmplaConcorrencia(vagasAC);
-    listaEP = new RendaFamiliar(vagasEP);
-    listaPPIEP = new RendaFamiliar(vagasPPIEP);
-    listaPPIRF = new RendaFamiliar(vagasPPIRF);
-    listaPcDEP = new RendaFamiliar(vagasPcDEP);
-    listaPcDRF = new RendaFamiliar(vagasPcDRF);
+    listaEP = new EscolaPublica(vagasEP);
+    listaPPIEP = new PPIEP(vagasPPIEP);
+    listaPPIRF = new PPIRF(vagasPPIRF);
+    listaPcDEP = new PcDEP(vagasPcDEP);
+    listaPcDRF = new PcDRF(vagasPcDRF);
     listaRF = new RendaFamiliar(vagasRF);
     this.nomeDoCurso = nomeDoCurso;
   }
@@ -48,7 +53,7 @@ public class Curso {
       listaPPIRF.adicionaEstudante(est);
     }
     else if(modalidade == "PcDEP") {
-      vagasPcDEP.adicionaEstudante(est);
+      listaPcDEP.adicionaEstudante(est);
     }
     else if(modalidade == "PcDRF") {
       listaPcDRF.adicionaEstudante(est);

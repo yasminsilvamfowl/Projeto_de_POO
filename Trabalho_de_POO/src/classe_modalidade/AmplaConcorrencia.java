@@ -5,9 +5,10 @@ import classe_estudante.*;
 
 public class AmplaConcorrencia{
     private Vector<Estudante> estudantes = new Vector<Estudante>();
+    private int vagas;
     
-	public AmplaConcorrencia(){
-		
+	public AmplaConcorrencia(int vagas){
+		setVagas(vagas);
 	}
 	
 	public void adicionaEstudante(Estudante e) {
@@ -31,6 +32,21 @@ public class AmplaConcorrencia{
 			}
 		}
 	}
+	
+	public void remover(Estudante est) {
+	      //Caso o aluno não esteja na lista
+	      if(procurar(est.getNome()) == null || estudantes.isEmpty()) 
+	        return;
+	      estudantes.remove(est);
+	  }
+
+	  //retorna o primeiro colocado da lista
+	  public Estudante primeiroColocado() {
+	      if (estudantes.isEmpty()) {
+	        return null;
+	      }
+	      return estudantes.get(0);
+	  }
 	
 	public Boolean verificaRenda(){
 	    return true;
@@ -71,6 +87,14 @@ public class AmplaConcorrencia{
 	public Vector<Estudante> retornaResultado(){
 	    return estudantes;
 	    
+	}
+
+	public int getVagas() {
+		return vagas;
+	}
+
+	public void setVagas(int vagas) {
+		this.vagas = vagas;
 	}
 	
 }
