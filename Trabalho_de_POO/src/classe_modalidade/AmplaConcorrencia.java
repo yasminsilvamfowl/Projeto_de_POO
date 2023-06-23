@@ -13,7 +13,7 @@ public class AmplaConcorrencia{
 	}
 	
 	
-	public void ClassificaEstudante() throws VIException {
+	public void Verificacao() {
 		for(int i = 0; estudantes.size() > i; i++) {
 			if(!verificaPPI(estudantes.get(i))) {
 				Final(i);
@@ -34,15 +34,17 @@ public class AmplaConcorrencia{
 		
 	}
 	
-	public Estudante Colocacao(int i) throws VIException {
+	public void Colocacao(int i) throws VIException, EPException {
 			Estudante e = estudantes.get(i);		
-			if(i + 1 > vagas) {
+			if(estudantes.get(i).getExc() == "EscolaPublica") {
+				throw new EPException(estudantes.get(i));
+			}
+			else if(i + 1 > vagas) {
 				throw new VIException(estudantes.get(i));
 			}
 			else {
 				System.out.println(estudantes.get(i).getNome() + ":" + estudantes.get(i).getNota());
 			}
-		return e;
 	}
 	
 	
@@ -78,7 +80,7 @@ public class AmplaConcorrencia{
 	  }
 
 	  //retorna o primeiro colocado da lista
-	  public Estudante primeiroColocado() {
+	public Estudante primeiroColocado() {
 	      if (estudantes.isEmpty()) {
 	        return null;
 	      }
@@ -126,9 +128,11 @@ public class AmplaConcorrencia{
 	    
 	}
 
+
 	public int getVagas() {
 		return vagas;
 	}
+
 
 	public void setVagas(int vagas) {
 		this.vagas = vagas;
