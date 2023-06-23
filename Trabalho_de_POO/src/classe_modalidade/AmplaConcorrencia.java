@@ -13,7 +13,7 @@ public class AmplaConcorrencia{
 	}
 	
 	
-	public void ClassificaEstudante() {
+	public void ClassificaEstudante() throws VIException {
 		for(int i = 0; estudantes.size() > i; i++) {
 			if(!verificaPPI(estudantes.get(i))) {
 				Final(i);
@@ -24,8 +24,7 @@ public class AmplaConcorrencia{
 				Final(i);
 			}else if(!verificaEscolaPublica(estudantes.get(i))) {
 				Final(i);
-			}
-					
+			}	
 		}
 	}
 	
@@ -35,21 +34,24 @@ public class AmplaConcorrencia{
 		
 	}
 	
-	public void Colocacao() {
-		for(int i = 0; estudantes.size() > i; i++) {
-			if(estudantes.get(i).getExc() != null) {
-				
+	public Estudante Colocacao(int i) throws VIException {
+			Estudante e = estudantes.get(i);		
+			if(i + 1 > vagas) {
+				throw new VIException(estudantes.get(i));
 			}
-			else if(i > vagas) {
-				VIException vie = new VIException(estudantes.get(i));
+			else {
+				System.out.println(estudantes.get(i).getNome() + ":" + estudantes.get(i).getNota());
 			}
-		}
+		return e;
 	}
+	
+	
 	
 	public void adicionaEstudante(Estudante e) {
 		 if(existe(e.getNome())) 
 		        return;
 		 estudantes.add(e);
+		 OrganizaEstudante();
 	}
 	
 	public void OrganizaEstudante(){
@@ -130,6 +132,10 @@ public class AmplaConcorrencia{
 
 	public void setVagas(int vagas) {
 		this.vagas = vagas;
+	}
+	
+	public int tamanho() {
+		return estudantes.size();
 	}
 	
 }

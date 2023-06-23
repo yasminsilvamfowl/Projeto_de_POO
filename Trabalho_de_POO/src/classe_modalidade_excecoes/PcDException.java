@@ -8,7 +8,15 @@ public class PcDException extends Exception{
 	
 	public PcDException(Estudante e) {
 		super("Estudante não possui deficiencia");
-		e.setExc(getCause());
+		this.e = e;
+	}
+	
+	public String getNome(){
+		return e.getNome();
+	}
+	
+	public float getNota() {
+		return e.getNota();
 	}
 
 

@@ -9,7 +9,15 @@ public class EPException extends Exception {
 	
 	public EPException(Estudante e) {
 		super("Estudante não estudou em escola publica");
-		e.setExc(getCause());
+		this.e = e;
+	}
+	
+	public String getNome(){
+		return e.getNome();
+	}
+	
+	public float getNota() {
+		return e.getNota();
 	}
 
 	

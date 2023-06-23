@@ -1,6 +1,9 @@
 package classe_modalidade;
 
 import classe_estudante.Estudante;
+import classe_modalidade_excecoes.VIException;
+
+import java.util.Vector;
 
 // classe para testes
 public class MAIN {
@@ -12,12 +15,18 @@ public class MAIN {
 		
 		AmplaConcorrencia ac = new AmplaConcorrencia(2);
 		EscolaPublica es = new EscolaPublica(2);
-		ac.adicionaEstudante(eS);
-		ac.adicionaEstudante(eS1);
+		es.adicionaEstudante(eS);
+		es.adicionaEstudante(eS1);
 		es.adicionaEstudante(eS2);
 		es.adicionaEstudante(eS3);
-		es.OrganizaEstudante();
-		es.imprimirLista();
+		for(int i = 0; i < es.tamanho() ;i++) {
+		   try {
+			   Estudante e = es.Colocacao(i);
+		   }catch(VIException vi) {
+			   System.out.println(vi.getMessage());
+			   System.out.println(vi.getNome() + ": " + vi.getNota());
+		   }
+		}
 
 	}
 }

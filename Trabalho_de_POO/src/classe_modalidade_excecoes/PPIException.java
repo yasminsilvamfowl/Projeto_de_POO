@@ -8,8 +8,15 @@ public class PPIException extends Exception {
 
 	public PPIException(Estudante e) {
 		super("Estudante nao e preto, pardo ou indigena");
-		e.setExc(getCause());
+		this.e = e;
+	}
 	
+	public String getNome(){
+		return e.getNome();
+	}
+	
+	public float getNota() {
+		return e.getNota();
 	}
 
 }

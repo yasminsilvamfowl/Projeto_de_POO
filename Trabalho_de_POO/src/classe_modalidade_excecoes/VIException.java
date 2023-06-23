@@ -8,7 +8,15 @@ public class VIException extends Exception{
 	
 	public VIException(Estudante e) {
 		super("Vagas Insuficientes");
-		e.setExc(getCause());
+		this.e = e;
+	}
+	
+	public String getNome(){
+		return e.getNome();
+	}
+	
+	public float getNota() {
+		return e.getNota();
 	}
 
 }

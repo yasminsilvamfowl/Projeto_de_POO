@@ -8,7 +8,15 @@ public class RFException extends Exception{
 
 	public RFException(Estudante e) {
 		super("Estudante possui renda acima de 1,5 salarios minimos");
-		e.setExc(getCause());
+		this.e = e;
+	}
+	
+	public String getNome(){
+		return e.getNome();
+	}
+	
+	public float getNota() {
+		return e.getNota();
 	}
 
 }
