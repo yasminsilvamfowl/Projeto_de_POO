@@ -1,13 +1,19 @@
 package classe_modalidade;
 
+import classe_estudante.Estudante;
+
 public class PPIRF extends RendaFamiliar{
 
 	public PPIRF(int vagas) {
 		super(vagas);
 	}
 
-	public Boolean verificaPPI(){
-	    return false;
+	public Boolean verificaPPI(Estudante e){
+		if(e.getEtnia() == "Branco") {
+			e.setExc("PPI");
+			return false;
+		}
+	    return true;
 	}
 	
 }

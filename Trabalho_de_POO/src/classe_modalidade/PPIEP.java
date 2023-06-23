@@ -1,5 +1,7 @@
 package classe_modalidade;
 
+import classe_estudante.Estudante;
+
 public class PPIEP extends EscolaPublica{
 
 	public PPIEP(int vagas) {
@@ -7,8 +9,12 @@ public class PPIEP extends EscolaPublica{
 	}
 
 
-	public Boolean verificaPPI(){
-	    return false;
+	public Boolean verificaPPI(Estudante e){
+		if(e.getEtnia() == "Branco") {
+			e.setExc("PPI");
+			return false;
+		}
+	    return true;
 	}
 	
 

@@ -8,7 +8,7 @@ public class EscolaPublica extends AmplaConcorrencia {
 	}
 	
 	public  Boolean verificaEscolaPublica(Estudante e){
-		if(e.isEscolaPublica() == false) {
+		if(e.isEscolaPublica() == "Privada") {
 			e.setExc("EscolaPublica");
 			return false;
 		}
