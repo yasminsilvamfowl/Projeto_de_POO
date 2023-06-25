@@ -1,12 +1,15 @@
-package classe_modalidade;
+/* package classe_modalidade;
 
 import classe_estudante.Estudante;
 import classe_modalidade_excecoes.*;
+import classe_instituicao.*;
 
 
 // classe para testes
 public class MAIN {
 	public static void main(String[] args) {
+		
+		
 		/* Estudante eS = new Estudante("Maria", 500, false);
 		Estudante eS1 = new Estudante("joao", 200, true);
 		Estudante eS2 = new Estudante("pedro", 300, true);
@@ -40,6 +43,6 @@ public class MAIN {
 			   System.out.println(rf.getNome() + ": " + rf.getNota());
 		   }
 		}
-		*/
 	}
 }
+*/

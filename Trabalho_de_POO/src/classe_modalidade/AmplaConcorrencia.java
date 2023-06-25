@@ -34,8 +34,7 @@ public class AmplaConcorrencia{
 		
 	}
 	
-	public void Colocacao(int i) throws VIException, EPException, RFException, PPIException, PcDException {
-			Estudante e = estudantes.get(i);		
+	public void Colocacao(int i) throws VIException, EPException, RFException, PPIException, PcDException {		
 			if(estudantes.get(i).getExc() == "EscolaPublica") {
 				throw new EPException(estudantes.get(i));
 			}
@@ -52,7 +51,7 @@ public class AmplaConcorrencia{
 				throw new VIException(estudantes.get(i));
 			}
 			else {
-				System.out.println(estudantes.get(i).getNome() + ":" + estudantes.get(i).getNota());
+				estudantes.get(i).setExc("Aprovado(a)");
 			}
 	}
 	
