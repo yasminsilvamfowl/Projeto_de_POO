@@ -3,7 +3,7 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class PPIRF extends RendaFamiliar{
-
+	private String name = "PPI com Baixa Renda";
 	public PPIRF(int vagas) {
 		super(vagas);
 	}
@@ -15,5 +15,7 @@ public class PPIRF extends RendaFamiliar{
 		}
 	    return true;
 	}
-	
+	public String getName() {
+		return name;
+	}
 }

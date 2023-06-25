@@ -7,6 +7,7 @@ import classe_modalidade_excecoes.*;
 public class AmplaConcorrencia{
     private Vector<Estudante> estudantes = new Vector<Estudante>();
     private int vagas;
+    private String name = "Ampla Concorrencia";
     
 	public AmplaConcorrencia(int vagas){
 		setVagas(vagas);
@@ -144,6 +145,11 @@ public class AmplaConcorrencia{
 	
 	public int tamanho() {
 		return estudantes.size();
+	}
+
+
+	public String getName() {
+		return name;
 	}
 	
 }

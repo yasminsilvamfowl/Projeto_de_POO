@@ -3,7 +3,7 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class PcDEP extends EscolaPublica{
-
+	private String name = "PcD";
 	public PcDEP(int vagas) {
 		super(vagas);
 	}
@@ -14,6 +14,9 @@ public class PcDEP extends EscolaPublica{
 			return false;
 		}
 	    return true;
+	}
+	public String getName() {
+		return name;
 	}
 	
 }

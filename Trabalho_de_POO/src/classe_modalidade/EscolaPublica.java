@@ -3,6 +3,8 @@ package classe_modalidade;
 import classe_estudante.Estudante;
 
 public class EscolaPublica extends AmplaConcorrencia {
+	private String name = "Escola Publica";
+	
 	public EscolaPublica(int vagas) {
 		super(vagas);
 	}
@@ -13,5 +15,9 @@ public class EscolaPublica extends AmplaConcorrencia {
 			return false;
 		}
 		return true;
+	}
+
+	public String getName() {
+		return name;
 	}
 }

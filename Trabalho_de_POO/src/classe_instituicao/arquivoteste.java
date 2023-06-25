@@ -1,8 +1,5 @@
 package classe_instituicao;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Vector;
@@ -16,20 +13,29 @@ import classe_modalidade.*;
 
 
 public class arquivoteste {
+	File file;
+	FileWriter ler;
 	public arquivoteste() {
 		
 		
 	}
-	public void criaArquivo(EscolaPublica es) {
-		File file = new File("Testes.txt");
-		
+	
+	public void criaArquivo() {
+		try {
+			file = new File("Testes.txt");
+			file.createNewFile();
+		}catch(IOException io) {
+			System.out.println("erro");
+		}
+	}
+	public void escreveArquivo(AmplaConcorrencia es) {
 		
 		try {
-			file.createNewFile();
-			FileWriter ler = new FileWriter(file);
+			
+			FileWriter ler = new FileWriter(file, true);
 			PrintWriter lerb = new PrintWriter(ler);
 			Vector <Estudante> est = es.retornaResultado();
-			
+			lerb.println(es.getName());
 			for(int i = 0; i < es.tamanho() ;i++) {
 				   try {
 					   es.Colocacao(i);
